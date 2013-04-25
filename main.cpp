@@ -1,13 +1,16 @@
 
 #include <iostream>
 #include <string>
+#include <mpir.h>
 
 using namespace std;
 
-int euler17();
+//int euler017();
+int euler025();
 
 int main(){
+	euler025();
 
-	getchar();
+	getchar(); //pause
 	return 0;
 }
