@@ -76,8 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="euler017.cpp" />
-    <ClCompile Include="euler025.cpp" />
+    <ClCompile Include="euler030.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,15 +1,14 @@
 
 #include <iostream>
 #include <string>
-#include <mpir.h>
+#include <cmath>
 
 using namespace std;
 
-//int euler017();
-int euler025();
+int euler030();
 
 int main(){
-	euler025();
+	euler030();
 
 	getchar(); //pause
 	return 0;
