@@ -5,10 +5,11 @@
 
 using namespace std;
 
-int euler030();
+int euler034();
 
 int main(){
-	euler030();
+
+	euler034();
 
 	getchar(); //pause
 	return 0;

@@ -18,7 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="euler030.cpp">
+    <ClCompile Include="euler034.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
