@@ -19,6 +19,8 @@ Using words.txt (right click and 'Save Link/Target As...'), a 16K text file cont
 */
 
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 
@@ -39,17 +41,53 @@ int ascii2num(char abc)
 	return num;
 }
 
+// check for num in table of triangle numbers
+bool is_triangleNum(int num, int table[], int tableSize)
+{
+	for (int i = 0; i < tableSize; i++){
+		if (table[i] == num){
+			return true;
+		}
+	}
+
+	return false;	// number was not in table
+}
+
 
 int euler042()
 {	
-	// generate lookup table of triangular numbers
+	// generate lookup table of triange numbers
 	const int tN = 50;
 	int triangleNums[tN];
 	for (int i = 1; i < tN; i++){
-		triangleNums[i] = i/2*(i+1);
+		triangleNums[i-1] = (i*(i+1))/2;
 	}
 
+	// open file
+	ifstream fid;
+	fid.open("words.txt");
+	if (!fid.good()){ 
+	return 1; // exit if file not found
+	}
+
+	// grab each word, check if word is a triangle word
+	int result = 0; // running count of triangle words
+	string word; 
+	while (fid.good())
+    {
+		getline(fid, word, ','); // get individual word
+
+		int sum = 0;
+		for(std::string::size_type i = 0; i < word.size(); ++i) {
+			sum += ascii2num( word[i] ); // get sum of letters->nums
+		}
+		if ( is_triangleNum(sum,triangleNums,tN) ) { // check if triangular word
+			cout << word << " " << sum << endl;
+			result++;
+		}
+    }
+    fid.close();
 	
-	
+	cout << "\nThere are " << result << " triangle words.\n"; // print out answer!
 	return 0;
 }
