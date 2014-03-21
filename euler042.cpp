@@ -84,6 +84,7 @@ int euler042()
 		if ( is_triangleNum(sum,triangleNums,tN) ) { // check if triangular word
 			cout << word << " " << sum << endl;
 			result++;
+
 		}
     }
     fid.close();
